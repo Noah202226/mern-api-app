@@ -25,13 +25,20 @@ app.use(errorHandler);
 
 // Serve frontend
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  const staticPath = path.join(__dirname, "../frontend/dist");
+  app.use(express.static(staticPath));
 
-  app.get("*", (req, res) =>
-    res.sendFile(
-      path.resolve(__dirname, "../", "frontend", "dist", "index.html")
-    )
-  );
+  app.get("*", (req, res) => {
+    const holderPath = path.resolve(
+      __dirname,
+      "../",
+      "frontend",
+      "dist",
+      "index.html"
+    );
+    console.log(holderPath);
+    res.sendFile(holderPath);
+  });
 } else {
   app.get("/", (req, res) =>
     res.send("Please deploy your production files and retry again")
