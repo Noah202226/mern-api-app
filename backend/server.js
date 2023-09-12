@@ -19,12 +19,6 @@ app.use("/api/goals", require("./routes/goalRoutes"));
 //
 app.use(errorHandler);
 
-try {
-  app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-  });
-} catch (e) {
-  app.listen(port + 1, () => {
-    console.log(`Server running on port ${port + 1}`);
-  });
-}
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
