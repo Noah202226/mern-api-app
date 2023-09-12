@@ -33,7 +33,9 @@ if (process.env.NODE_ENV === "production") {
     )
   );
 } else {
-  app.get("/", (req, res) => res.send("Please deploy your production codes"));
+  app.get("/", (req, res) =>
+    res.send("Please deploy your production files and retry again")
+  );
 }
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
