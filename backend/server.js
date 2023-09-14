@@ -26,6 +26,7 @@ app.use(errorHandler);
 // Serve frontend
 if (process.env.NODE_ENV === "production") {
   const staticPath = path.join(__dirname, "../frontend/dist");
+  console.log(staticPath);
   app.use(express.static(staticPath));
 
   app.get("*", (req, res) => {
