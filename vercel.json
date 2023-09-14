@@ -6,7 +6,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "dest": "/api/goals/server.js"
+      "destination": "/api/goals/server.js"
     }
   ]
 }
