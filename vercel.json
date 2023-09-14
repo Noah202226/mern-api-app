@@ -3,6 +3,7 @@
   "buildCommand": "concurrently \"npm run build\" \"node backend/server.js\"",
   "installCommand": "npm install",
   "public": true,
+  "outputDirectory": "/frontend/dist",
   "builds": [
     { "src": "*.html", "use": "@vercel/static" },
     { "src": "*.js", "use": "@vercel/node" }
