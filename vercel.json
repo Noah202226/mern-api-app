@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "buildCommand": "concurrently \"npm run build\" \"npm install\" \"node backend/server.js\"",
+  "buildCommand": "concurrently \"npm run build\" \"node backend/server.js\"",
+  "installCommand": "npm install",
   "public": true,
   "builds": [
     { "src": "*.html", "use": "@vercel/static" },
     { "src": "*.js", "use": "@vercel/node" }
   ],
-  "routes": [{ "src": "/", "dest": "/frontend/dist/index.html" }]
+  "routes": [{ "src": "/api/goals", "dest": "/backend/server.js" }]
 }
